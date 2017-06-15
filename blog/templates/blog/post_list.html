@@ -5,15 +5,18 @@
   </head>
 
   <body>
-  
+
     <div>
       <h1>Tim's Blog</h1>
     </div>
 
-    <div>
-      <h3>Dit is de eerste regel</h3>
-      <p>Ik weet niet goed wat hier moet staan</p>
-    </div>
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h3><a href="">{{ post.title }}</a></h3>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
 
   </body>
 
